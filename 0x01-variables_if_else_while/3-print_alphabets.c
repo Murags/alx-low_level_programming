@@ -6,13 +6,12 @@
 */
 int main(void)
 {
-char lower;
-for (lower = 'a';lower <= 'z';lower++)
+char lower, Upper;
+for (lower = 'a'; lower <= 'z'; lower++)
 {
 putchar(lower);
 }
-char Upper;
-for (Upper = 'A';Upper <= 'Z';Upper++)
+for (Upper = 'A'; Upper <= 'Z'; Upper++)
 {
 putchar(Upper);
 }
