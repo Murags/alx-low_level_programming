@@ -16,4 +16,5 @@ for (num = 97; num <= 102; num++)
 putchar(num);
 }
 putchar('\n');
+return (0);
 }
