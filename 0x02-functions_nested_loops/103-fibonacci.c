@@ -13,8 +13,9 @@ int main(void)
 	curr = 2;
 	next = prev + curr;
 	ref = 4000000;
+	total = 2;
 
-	for (; next < ref;)
+	for (; next <= ref;)
 	{
 		next = prev + curr;
 		if ((next % 2) == 0)
