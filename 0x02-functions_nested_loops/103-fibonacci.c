@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	long int prev, curr, next, total, ref;
+	int prev, curr, next, total, ref;
 
 	prev = 1;
 	curr = 2;
@@ -17,14 +17,14 @@ int main(void)
 	for (; next < ref;)
 	{
 		next = prev + curr;
-		if ((next / 2) == 0)
+		if ((next % 2) == 0)
 		{
 			total = total + next;
 		}
 		prev = curr;
 		curr = next;
 	}
-	printf("%ld", total);
+	printf("%d", total);
 	printf("\n");
 	return (0);
 
