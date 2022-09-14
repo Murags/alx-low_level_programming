@@ -7,21 +7,29 @@
 */
 int main(void)
 {
-	unsigned long int prev, curr, next;
+	long long int prev, curr, next, alt;
 	int counter;
 
 	prev = 1;
 	curr = 2;
 	next = prev + curr;
 
-	printf("%lu, %lu", prev, curr);
+	printf("%lld, %lld", prev, curr);
 
-	for (counter = 2; counter <= 10; counter++)
+	for (counter = 2; counter < 98; counter++)
 	{
-		next = prev + curr;
-		printf(", %lu", next);
-		prev = curr;
-		curr = next;
+		if (next >= 0)
+		{
+			next = prev + curr;
+			printf(", %lld", next);
+			prev = curr;
+			curr = next;
+		}
+		else
+		{
+			alt = 9223372036854775807 + next;
+			printf(", %lld", alt); 
+		}
 	}
 	printf("\n");
 	return (0);
