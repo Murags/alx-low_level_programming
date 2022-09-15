@@ -8,17 +8,23 @@ void print_triangle(int size)
 {
 	int counter1, counter2, counter3;
 
-
-	for (counter1 = 1; counter1 <= size; counter1++)
+	if (size > 0)
 	{
-		for (counter2 = 1; counter2 <= (size - counter1); counter2++)
+		for (counter1 = 1; counter1 <= size; counter1++)
 		{
-			_putchar(32);
+			for (counter2 = 1; counter2 <= (size - counter1); counter2++)
+			{
+				_putchar(32);
+			}
+			for (counter3 = 0; counter3 <= (size - counter2); counter3++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
-		for (counter3 = 0; counter3 <= (size - counter2); counter3++)
-		{
-			_putchar('#');
-		}
+	}
+	else
+	{
 		_putchar('\n');
 	}
 }
