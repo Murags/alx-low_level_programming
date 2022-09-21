@@ -8,16 +8,18 @@
 */
 char *leet(char *str)
 {
-	int arr[10] = {4, 3, 7, 0, 1, 4, 3, 7, 0, 1}, i, j;
-	int let[10] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
+	int i, j;
 
-	for (i = 0; *(str + i) != '\0'; i++)
+	char arr[] = {'4', '3', '7', '0', '1', '4', '3', '7', '0', '1'};
+	char let[] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; let[j] != '\0'; j++)
+		for (j = 0; j < 10; j++)
 		{
-			if (*(str + i) == let[j])
+			if (str[i] == let[j])
 			{
-				*(str + i) = arr[j];
+				str[i] = arr[j];
 			}
 		}
 	}
