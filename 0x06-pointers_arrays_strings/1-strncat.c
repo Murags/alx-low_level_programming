@@ -19,16 +19,11 @@ char *_strncat(char *dest, char *src, int n)
 	{
 	}
 
-	for (j = 0; *(src + j) != '\0'; j++)
+	for (j = 0; counter < n && *(src + j) != '\0'; j++)
 	{
 		counter++;
 		*(dest + i) = *(src + j);
 		i++;
-
-		if (counter == n)
-		{
-			break;
-		}
 	}
 	return (dest);
 }
