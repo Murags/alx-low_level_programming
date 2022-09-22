@@ -20,23 +20,28 @@ char *rot13(char *str)
 				temp = *(str + i) - 'm';
 				*(str + i) = temp + 96;
 			}
-			else
+			else if (*(str + i) <= 'm')
 			{
 				*(str + i) += 13;
 			}
 		}
-		else if (*(str + i) >= 'A' && *(str + i) <= 'Z')
+
+	}
+	for (i = 0; *(str + i) != '\0'; i++)
+	{
+		if (*(str + i) >= 'A' && *(str + i) <= 'Z')
 		{
 			if (*(str + i) > 'M')
 			{
 				temp = *(str + i) - 'M';
 				*(str + i) = temp + 64;
 			}
-			else
+			else if (*(str + i) <= 'M')
 			{
 				*(str + i) += 13;
 			}
 		}
 	}
+	
 	return (str);
 }
