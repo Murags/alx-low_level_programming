@@ -8,42 +8,20 @@
 */
 char *rot13(char *str)
 {
-	int i;
-	char temp;
+	int i, j;
+	char *letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		if (*(str + i) >= 'a' && *(str + i) <= 'z')
+		for (j = 0; *(letters + j) != '\0'; j++)
 		{
-			if (*(str + i) > 'm')
+			if (*(str + i) == *(letters + j))
 			{
-				temp = *(str + i) - 'm';
-				*(str + i) = temp + 96;
-				continue;
-			}
-			if (*(str + i) <= 'm')
-			{
-				*(str + i) += 13;
-			}
-		}
-
-	}
-	for (i = 0; *(str + i) != '\0'; i++)
-	{
-		if (*(str + i) >= 'A' && *(str + i) <= 'Z')
-		{
-			if (*(str + i) > 'M')
-			{
-				temp = *(str + i) - 'M';
-				*(str + i) = temp + 64;
-				continue;
-			}
-			if (*(str + i) <= 'M')
-			{
-				*(str + i) += 13;
+				*(str + i) = *(rot13 + j);
+				break;
 			}
 		}
 	}
-
 	return (str);
 }
