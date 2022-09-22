@@ -19,8 +19,9 @@ char *rot13(char *str)
 			{
 				temp = *(str + i) - 'm';
 				*(str + i) = temp + 96;
+				continue;
 			}
-			else if (*(str + i) <= 'm')
+			if (*(str + i) <= 'm')
 			{
 				*(str + i) += 13;
 			}
@@ -35,8 +36,9 @@ char *rot13(char *str)
 			{
 				temp = *(str + i) - 'M';
 				*(str + i) = temp + 64;
+				continue;
 			}
-			else if (*(str + i) <= 'M')
+			if (*(str + i) <= 'M')
 			{
 				*(str + i) += 13;
 			}
