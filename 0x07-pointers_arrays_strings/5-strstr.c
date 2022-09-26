@@ -34,6 +34,7 @@ char *_strstr(char *haystack, char *needle)
 					}
 					k++;
 					i++;
+					
 				}
 			}
 		if (counter == len)
@@ -42,7 +43,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 
 	}
-	if (*(haystack + 7) != '\0')
+	if (*(haystack + j) != '\0')
 	{
 		return (haystack + j);
 	}
