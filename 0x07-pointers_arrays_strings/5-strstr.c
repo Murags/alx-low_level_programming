@@ -22,21 +22,20 @@ char *_strstr(char *haystack, char *needle)
 
 	for (j = 0; haystack[j] != '\0'; j++)
 	{
-			i = 0;
-			if (haystack[j] == needle[i])
+		i = 0;
+		if (haystack[j] == needle[i])
+		{
+			k = j;
+			for (counter = 0; counter < len; counter++)
 			{
-				k = j;
-				for (counter = 0; counter < len; counter++)
+				if (haystack[k] != needle[i])
 				{
-					if (haystack[k] != needle[i])
-					{
-						break;
-					}
-					k++;
-					i++;
-					
+					break;
 				}
+				k++;
+				i++;
 			}
+		}
 		if (counter == len)
 		{
 			break;
