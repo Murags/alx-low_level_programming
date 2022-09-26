@@ -1,6 +1,6 @@
-| Task      | Description |
+| # Task      | # Description |
 | ----------- | ----------- |
-| 0-strcat.c | Function that concatenates two strings |
+| ## 0-strcat.c | Function that concatenates two strings |
 | 1-strncat.c | Function is similar to the \_strcat function, except that it will use at most n bytes from src |
 | 2-strncpy.c | Function that copies a string. |
 | 3-strcmp.c | Function that compares two strings. |
