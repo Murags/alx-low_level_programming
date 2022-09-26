@@ -15,7 +15,10 @@ char *_strstr(char *haystack, char *needle)
 	for (len = 0; needle[len] != '\0'; len++)
 	{
 	}
-
+	if (len == 0)
+	{
+		return (haystack);
+	}
 
 	for (j = 0; haystack[j] != '\0'; j++)
 	{
@@ -39,5 +42,12 @@ char *_strstr(char *haystack, char *needle)
 		}
 
 	}
-	return (haystack + j);
+	if (*(haystack + 7) != '\0')
+	{
+		return (haystack + j);
+	}
+	else
+	{
+		return ('\0');
+	}
 }
