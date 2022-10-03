@@ -18,10 +18,10 @@ char *create_array(unsigned int size, char c)
 	{
 		return ('\0');
 	}
-	else if (size > 0)
+	else
 	{
 		ptr = malloc(sizeof(char) * size);
-		if (*ptr == '\0')
+		if (ptr == '\0')
 		{
 			return ('\0');
 		}
@@ -30,9 +30,5 @@ char *create_array(unsigned int size, char c)
 			ptr[i] = c;
 		}
 		return (ptr);
-	}
-	else
-	{
-		return ('\0');
 	}
 }
