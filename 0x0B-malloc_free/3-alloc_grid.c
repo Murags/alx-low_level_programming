@@ -50,6 +50,10 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		ptr2[i] = innerarr(width);
+		if (ptr2[i] == NULL)
+		{
+			free(ptr2);
+		}
 	}
 	return (ptr2);
 }
