@@ -1,29 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 /**
-*innerarr - adds element to the inner arrays
-*
-*@width: size of the array
-*
-*Return: array pointer
-*/
-int *innerarr(int width)
-{
-	int j, *ptr1;
-
-	ptr1 = malloc(sizeof(int) * width);
-	if (ptr1 == NULL)
-	{
-		free(ptr1);
-		return (NULL);
-	}
-	for (j = 0; j < width; j++)
-	{
-		ptr1[j] = 0;
-	}
-	return (ptr1);
-}
-/**
 *alloc_grid - function that returns a pointer
 *to a 2 dimensional array of integers.
 *
@@ -34,7 +11,7 @@ int *innerarr(int width)
 */
 int **alloc_grid(int width, int height)
 {
-	int **ptr2, i;
+	int **ptr2, i, j;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -49,10 +26,22 @@ int **alloc_grid(int width, int height)
 	}
 	for (i = 0; i < height; i++)
 	{
-		ptr2[i] = innerarr(width);
+		ptr2[i] = malloc(sizeof(int) * width);
 		if (ptr2[i] == NULL)
 		{
+			for (; i >= 0; i--)
+			{
+				free(ptr2[i]);
+			}
 			free(ptr2);
+			return (NULL);
+		}
+		else
+		{
+			for (j = 0; j < width; j++)
+			{
+				ptr2[i][j] = 0;
+			}
 		}
 	}
 	return (ptr2);
