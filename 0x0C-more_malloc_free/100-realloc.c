@@ -45,7 +45,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		temp2[i] = *temp++;
 		if (i > old_size)
+		{
 			break;
+		}
+
 	}
 	free(ptr);
 	return (ptr2);
