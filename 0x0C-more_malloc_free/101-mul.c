@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	}
 	else if (!isdigit(argv[1]) || !isdigit(argv[2]))
 	{
-		print("Error\n");
+		printf("Error\n");
 		exit(98);
 	}
 	else
