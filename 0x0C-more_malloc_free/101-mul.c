@@ -17,11 +17,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	else if (!isdigit(argv[1]) || !isdigit(argv[2]))
-	{
-		printf("Error\n");
-		exit(98);
-	}
 	else
 	{
 		printf("%d\n", (atoi(argv[1]) * atoi(argv[2])));
