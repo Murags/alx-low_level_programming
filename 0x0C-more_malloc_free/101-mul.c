@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 /**
 *main - multiplies two numbers
 *
@@ -14,6 +15,11 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
+		exit(98);
+	}
+	else if (!isdigit(argv[1]) || !isdigit(argv[2]))
+	{
+		print("Error\n");
 		exit(98);
 	}
 	else
