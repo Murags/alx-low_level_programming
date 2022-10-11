@@ -11,6 +11,9 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	if (name == NULL || owner == NULL || age < 0)
+		return (NULL);
+
 	dog_t snoppdg, *temp;
 	char *tempName = name, *tempOwner = owner;
 
