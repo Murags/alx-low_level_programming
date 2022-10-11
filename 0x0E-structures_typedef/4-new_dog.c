@@ -14,6 +14,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *snoppdg;
 	int lenName, lenOwner, i;
 
+	if (name == NULL || age < 0 || owner == NULL)
+		return (NULL);
 	snoppdg = malloc(sizeof(dog_t));
 	if (snoppdg == NULL)
 	{
@@ -35,9 +37,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		snoppdg->name[i] = name[i];
 
 	snoppdg->name[i] = '\0';
-
 	snoppdg->age = age;
-
 	snoppdg->owner = malloc(sizeof(char) * (lenOwner + 1));
 	if (snoppdg->owner == NULL)
 	{
