@@ -22,9 +22,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	for (lenName = 0; name[lenName] != '\0'; lenName++)
-
+	{
+	}
 	for (lenOwner = 0; owner[lenOwner] != '\0'; lenOwner++)
-
+	{
+	}
 	snoppdg->name = malloc(sizeof(char) * (lenName + 1));
 	snoppdg->owner = malloc(sizeof(char) * (lenOwner + 1));
 
