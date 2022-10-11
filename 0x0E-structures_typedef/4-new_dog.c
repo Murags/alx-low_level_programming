@@ -15,8 +15,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int lenName, lenOwner, i;
 
 	snoppdg = malloc(sizeof(*snoppdg));
+
 	if (!(snoppdg) || !(name) || !(owner))
+	{
+		free(snoppdg);
 		return (NULL);
+	}
 
 	for (lenName = 0; name[lenName]; lenName++)
 		;
