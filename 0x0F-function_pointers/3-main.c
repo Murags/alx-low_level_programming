@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
 	}
 
 	result = (int)(get_op_func(argv[2])(num1, num2));
+	if (result == NULL)
+		return (-1);
 
 	printf("%d\n", result);
 	return (0);
