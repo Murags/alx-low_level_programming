@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (*operator != '+' && *operator != '-' && *operator != '*'
-		&& *operator != '/' && *operator != '%')
+	if (get_op_func(operator) == NULL || operator[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
