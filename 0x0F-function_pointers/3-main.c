@@ -12,13 +12,14 @@
 */
 int main(int argc, char *argv[])
 {
-	int result, num1, num2;
+	int num1, num2;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+
 	if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*'
 		&& *argv[2] != '/' && *argv[2] != '%')
 	{
@@ -36,8 +37,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	result = (int)(get_op_func(argv[2])(num1, num2));
-
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(argv[2])(num1, num2));
 	return (0);
 }
