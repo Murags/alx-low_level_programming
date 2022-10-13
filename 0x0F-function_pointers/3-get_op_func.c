@@ -1,5 +1,12 @@
 #include "3-calc.h"
 #include <stdio.h>
+/**
+*get_op_func - Calls correct function based on the operator
+*
+*@s: operator
+*
+*Return: correct function call
+*/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -16,8 +23,9 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 6)
 	{
-		if ((ops[i])[0] == s)
-		return (ops[i])[1];
+		if (*(ops[i].op) == *s)
+			break;
 		i++;
 	}
+	return ((ops[i]).f);
 }
