@@ -1,8 +1,8 @@
-global	_start
+global	main
 	extern	printf
 
 
-_start:
+main:
 	mov	rdi, msg
 	mov	rax, 0
 	call	printf
