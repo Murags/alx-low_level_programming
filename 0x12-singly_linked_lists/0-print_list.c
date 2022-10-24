@@ -9,7 +9,7 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
-	list_t *current = NULL;
+	const list_t *current = NULL;
 
 	if (h == NULL)
 		return (-1);
@@ -17,14 +17,9 @@ size_t print_list(const list_t *h)
 	current = malloc(sizeof(list_t));
 
 	if (current == NULL)
-	{
-		free(current);
 		return (-1);
-	}
 
-	current->str = h->str;
-	current->len = h->len;
-	current->next = h->next;
+	current = h;
 
 	while (current != NULL)
 	{
