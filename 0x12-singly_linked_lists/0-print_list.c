@@ -17,7 +17,10 @@ size_t print_list(const list_t *h)
 	current = malloc(sizeof(list_t));
 
 	if (current == NULL)
+	{
+		free(current);
 		return (-1);
+	}
 
 	current->str = h->str;
 	current->len = h->len;
