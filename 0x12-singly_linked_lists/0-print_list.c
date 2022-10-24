@@ -12,12 +12,12 @@ size_t print_list(const list_t *h)
 	const list_t *current = NULL;
 
 	if (h == NULL)
-		return (-1);
+		return (0);
 
 	current = malloc(sizeof(list_t));
 
 	if (current == NULL)
-		return (-1);
+		return (0);
 
 	current = h;
 
