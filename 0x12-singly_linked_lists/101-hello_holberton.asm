@@ -4,7 +4,7 @@ global _start
 section .data
 msg db  'Hello, Holberton',0xa
 
-start:
+_start:
 
     mov ecx,msg ;message to write
     mov ebx,1   ;file descriptor (stdout)
