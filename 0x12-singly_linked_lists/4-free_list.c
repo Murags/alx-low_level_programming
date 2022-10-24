@@ -1,9 +1,8 @@
 #include "lists.h"
 /**
-*free_list - frees a list
-*
-*@head: list of elements
-*/
+ * free_list - This function frees a list_t list
+ * @head: The list to free
+ */
 void free_list(list_t *head)
 {
 	list_t *tmp;
