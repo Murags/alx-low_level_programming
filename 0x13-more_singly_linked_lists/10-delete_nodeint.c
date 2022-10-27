@@ -34,10 +34,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 		remove = temp->next;
 		temp->next = remove->next;
-
 		free(remove);
+
+		return (1);
 	}
-	return (1);
+	return (-1);
 }
 /**
 *pop_list - removes first element of list
