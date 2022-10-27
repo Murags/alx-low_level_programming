@@ -1,5 +1,13 @@
 #include "lists.h"
-
+void pop_list(listint_t **head);
+/**
+*delete_nodeint_at_index - deletes node at a specific index
+*
+*@head: pointer to list
+*@index: node to delete
+*
+*Return: 1 success
+*/
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *remove, *temp;
@@ -9,20 +17,35 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (index == 0)
 	{
-		remove = temp;
-		temp = remove->next;
-
-		free(remove);
+		pop_list(head);
+		return (1);
 	}
-	while (temp != NULL && i < (index - 1) )
+	else
 	{
-		temp = temp->next;
-		i++;
+		temp = *head;
+		while (temp != NULL && i < (index - 1))
+		{
+			temp = temp->next;
+			i++;
+		}
+		remove = temp->next;
+		temp->next = remove->next;
 	}
-
-	remove = temp->next;
-	temp->next = remove->next;
-
-	free(remove);
 	return (1);
+}
+/**
+*pop_list - removes first element of list
+*
+*@head: pointer to list
+*/
+void pop_list(listint_t **head)
+{
+	listint_t *temp;
+
+	if (*head == NULL)
+		return;
+
+	temp = *head;
+	*head = temp->next;
+	free(temp);
 }
