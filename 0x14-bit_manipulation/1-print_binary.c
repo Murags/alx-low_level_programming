@@ -42,7 +42,6 @@ void print_binary(unsigned long int n)
 
 	power--;
 	rem = n;
-
 	while (power >= 0)
 	{
 		if (rem >= _pow(2, power))
@@ -57,4 +56,5 @@ void print_binary(unsigned long int n)
 			power--;
 		}
 	}
+	printf("\n%lu\n", n >> 0);
 }
