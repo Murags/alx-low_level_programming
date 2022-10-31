@@ -9,7 +9,7 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int binaryNum[32];
+	unsigned long int binaryNum[63];
 	unsigned int i = 0, j;
 
 	if (n == 0 && index < 64)
