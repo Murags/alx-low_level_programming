@@ -25,7 +25,7 @@ unsigned int _pow(unsigned int base, int power)
 	return (output);
 }
 /**
-*binary_to_unit - converts binary to unsigned int
+*binary_to_uint - converts binary to unsigned int
 *
 *@b: binary string
 *
@@ -45,7 +45,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 	len--;
-	while(len >= 0)
+	while (len >= 0)
 	{
 		if (b[len] == '1')
 		{
