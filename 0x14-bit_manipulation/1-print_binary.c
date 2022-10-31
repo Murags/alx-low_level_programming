@@ -35,7 +35,7 @@ void print_binary(unsigned long int n)
 	unsigned long int rem;
 
 	if (n == '\0')
-		return;
+		_putchar('0');
 
 	if (n == 0)
 		_putchar('0');
