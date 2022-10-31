@@ -9,22 +9,11 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int binaryNum[63];
-	unsigned int i = 0, j;
-
 	if (n == 0 && index < 64)
+		return (-1);
+
+	if ((n & (1 << index)) == 0)
 		return (0);
 
-	while (n > 0)
-	{
-		binaryNum[i++] = n % 2;
-		n /= 2;
-	}
-
-	for (j = 0; j < i; j++)
-	{
-		if (j == index)
-			return (binaryNum[j]);
-	}
-	return (-1);
+	return (1);
 }
