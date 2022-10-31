@@ -56,5 +56,4 @@ void print_binary(unsigned long int n)
 			power--;
 		}
 	}
-	printf("\n%lu\n", n >> 0);
 }
