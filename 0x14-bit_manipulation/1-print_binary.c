@@ -39,8 +39,10 @@ void print_binary(unsigned long int n)
 
 	while (n >= _pow(2, power))
 		power++;
+
 	if (n < _pow(2, power))
 		power--;
+
 	rem = n;
 	while (power >= 0)
 	{
