@@ -1,6 +1,6 @@
 #include "main.h"
 
-unsigned long int _pow(unsigned long int base, int power);
+unsigned long int _pow(unsigned long int base, unsigned long int power);
 /**
 *_pow - raises base to power
 *
@@ -9,7 +9,7 @@ unsigned long int _pow(unsigned long int base, int power);
 *
 *Return: Integer raised to a power
 */
-unsigned long int _pow(unsigned long int base, int power)
+unsigned long int _pow(unsigned long int base, unsigned long int power)
 {
 	unsigned long int output = 1;
 
@@ -31,7 +31,7 @@ unsigned long int _pow(unsigned long int base, int power)
 */
 void print_binary(unsigned long int n)
 {
-	int power = 0;
+	unsigned long int power = 0;
 	unsigned long int rem;
 
 	if (n == 0)
@@ -44,7 +44,7 @@ void print_binary(unsigned long int n)
 		power--;
 
 	rem = n;
-	while (power >= 0)
+	while (power >= 1)
 	{
 		if (rem >= _pow(2, power))
 		{
@@ -58,4 +58,16 @@ void print_binary(unsigned long int n)
 			power--;
 		}
 	}
+	if (rem >= _pow(2, power))
+                {
+                        _putchar('1');
+                        rem = rem - _pow(2, power);
+                        power--;
+                }
+                else
+                {
+                        _putchar('0');
+                        power--;
+                }
+
 }
