@@ -34,7 +34,7 @@ int main(int ac, char *argv[])
 	}
 
 	while	(fgets(buffer, sizeof(buffer), fp1))
-		dprintf(fp2, "%s", buffer);
+		fprintf(fp2, "%s", buffer);
 
 	return (1);
 }
