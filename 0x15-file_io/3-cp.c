@@ -18,27 +18,23 @@ int main(int ac, char *argv[])
 	if (ac != 3)
 	{
 		exit(97);
-		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	}
 
 	if (fp1 == NULL)
 	{
 		exit(98);
-		write(STDERR_FILENO, "Error: Can't read from file ", 28);
-		write(STDERR_FILENO, argv[1], strlen(argv[1]));
-		write(STDERR_FILENO, "\n", 1);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 	}
 	if (fp2 == NULL)
 	{
 		fclose(fp1);
 		exit(99);
-		write(STDERR_FILENO, "Error: Can't write to ", 22);
-		write(STDERR_FILENO, argv[2], strlen(argv[2]));
-		write(STDERR_FILENO, "\n", 1);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 	}
 
 	while	(fgets(buffer, sizeof(buffer), fp1))
-		fprintf(fp2, "%s", buffer);
+		dprintf(fp2, "%s", buffer);
 
 	return (1);
 }
