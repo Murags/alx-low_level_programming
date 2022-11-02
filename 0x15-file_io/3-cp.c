@@ -13,28 +13,34 @@ int main(int ac, char *argv[])
 {
 	FILE *fp1 = fopen(argv[1], "r");
 	FILE *fp2 = fopen(argv[2], "w");
-	char buffer[1024];
+	char *buffer;
 
+	buffer = malloc(1024 * 1);
 	if (ac != 3)
 	{
-		exit(97);
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
 	if (fp1 == NULL)
 	{
-		exit(98);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	if (fp2 == NULL)
 	{
 		fclose(fp1);
-		exit(99);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
-
-	while	(fgets(buffer, sizeof(buffer), fp1))
+	buffer = fgets(buffer, 1024, fp1);
+	while (buffer)
+	{
 		fprintf(fp2, "%s", buffer);
+		buffer = fgets(buffer, 1024, fp1);
+	}
+	fclose(fp1);
+	fclose(fp2);
 
 	return (1);
 }
