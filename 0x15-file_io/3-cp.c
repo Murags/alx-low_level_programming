@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 /**
 *main - function that copies file content to another
 *
@@ -13,10 +12,9 @@ int main(int ac, char *argv[])
 {
 	FILE *fp1 = fopen(argv[1], "r");
 	FILE *fp2 = fopen(argv[2], "a");
-	char *buffer;
+	char c;
 	int n;
 
-	buffer = malloc(1024 * 1);
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -34,11 +32,11 @@ int main(int ac, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	buffer = fgets(buffer, 1024, fp1);
-	while (buffer)
+	c = fgetc(fp1);
+	while (c != EOF)
 	{
-		fprintf(fp2, "%s", buffer);
-		buffer = fgets(buffer, 1024, fp1);
+		putc(c, fp2);
+		c = fgetc(fp1);
 	}
 	n = fclose(fp1);
 	if (n != 0)
@@ -53,6 +51,5 @@ int main(int ac, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp2));
 		exit(100);
 	}
-	free(buffer);
 	return (1);
 }
