@@ -53,6 +53,6 @@ int main(int ac, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp2));
 		exit(100);
 	}
-
+	free(buffer);
 	return (1);
 }
