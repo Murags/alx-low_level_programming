@@ -43,14 +43,14 @@ int main(int ac, char *argv[])
 	n = fclose(fp1);
 	if (n != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(argv[1]));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp1));
 		exit(100);
 	}
 	
 	n = fclose(fp2);
 	if (n != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(argv[2]));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp2));
 		exit(100);
 	}
 
