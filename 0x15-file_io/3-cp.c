@@ -12,8 +12,9 @@
 int main(int ac, char *argv[])
 {
 	FILE *fp1 = fopen(argv[1], "r");
-	FILE *fp2 = fopen(argv[2], "w");
+	FILE *fp2 = fopen(argv[2], "a");
 	char *buffer;
+	int n;
 
 	buffer = malloc(1024 * 1);
 	if (ac != 3)
@@ -39,8 +40,19 @@ int main(int ac, char *argv[])
 		fprintf(fp2, "%s", buffer);
 		buffer = fgets(buffer, 1024, fp1);
 	}
-	fclose(fp1);
-	fclose(fp2);
+	n = fclose(fp1);
+	if (n != 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(argv[1]));
+		exit(100);
+	}
+	
+	n = fclose(fp2);
+	if (n != 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(argv[2]));
+		exit(100);
+	}
 
 	return (1);
 }
