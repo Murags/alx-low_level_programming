@@ -10,9 +10,8 @@
 */
 int main(int ac, char *argv[])
 {
-	FILE *fp1 = fopen(argv[1], "r");
-	FILE *fp2 = fopen(argv[2], "a");
-	char c;
+	FILE *fp1 = fopen(argv[1], "r"), *fp2 = fopen(argv[2], "a");
+	char buffer[1024];
 	int n;
 
 	if (ac != 3)
@@ -32,11 +31,9 @@ int main(int ac, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	c = fgetc(fp1);
-	while (c != EOF)
+	while (fgets(buffer, sizeof(buffer), fp1))
 	{
-		putc(c, fp2);
-		c = fgetc(fp1);
+		fprintf(fp2, "%s", buffer);
 	}
 	n = fclose(fp1);
 	if (n != 0)
