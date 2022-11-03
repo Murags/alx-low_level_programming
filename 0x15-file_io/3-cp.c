@@ -23,6 +23,7 @@ int main(int ac, char *argv[])
 	if (fp1 == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		n = fclose(fp2);
 		exit(98);
 	}
 	if (fp2 == NULL)
@@ -33,17 +34,16 @@ int main(int ac, char *argv[])
 	}
 	while (fgets(buffer, sizeof(buffer), fp1))
 	{
-		fprintf(fp2, "%s", buffer);
+		dprintf(fileno(fp2), "%s", buffer);
 	}
 	n = fclose(fp1);
-	if (n != 0)
+	if (n == EOF)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp1));
 		exit(100);
 	}
-	
 	n = fclose(fp2);
-	if (n != 0)
+	if (n == EOF)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileno(fp2));
 		exit(100);
