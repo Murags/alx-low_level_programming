@@ -1,5 +1,11 @@
 #include "hash_tables.h"
-
+/**
+*hash_table_create - creates a hashtable
+*
+*@size: size of the hashtable
+*
+*Return: hashtable created
+*/
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hashTable;
@@ -14,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hashTable->array == NULL)
 		return (NULL);
 
-	while(i++ < size)
+	while (i++ < size)
 		hashTable->array[i] = NULL;
 
 	return (hashTable);
