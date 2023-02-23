@@ -1,7 +1,7 @@
 #comment
 CC=gcc
-SRC=.c
-OBJ=.o
+SRC=main.c school.c
+OBJ=$(SRC:.c=.o)
 NAME=school
 
 all: program
@@ -11,5 +11,5 @@ main.o: main.c
 school.o: school.c
 	$(CC)	-c -o school.o school.c
 
-program: main.o school.o
-	$(CC) *$(OBJ) -o $(NAME)
+program: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
