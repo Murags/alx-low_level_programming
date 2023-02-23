@@ -1,0 +1,6 @@
+#Comment
+CC=gcc
+SRC=.c
+
+all: #target
+	$(CC) *$(SRC) -o school
