@@ -1,7 +1,18 @@
 #!/usr/bin/python3
 
 
+"""Calculates island perimeter
+""" 
 def ordinates(list_p, position):
+  """calculates ordinates
+
+  Args:
+      list_p (list): reference
+      position (str): _description_
+
+  Returns:
+      list: ordinated of position requested based on list_p
+  """  
   if position == "top":
     a = list_p[0] - 1
     # if a < 0:
@@ -26,6 +37,14 @@ def ordinates(list_p, position):
   return new
 
 def island_perimeter(grid):
+  """Calculate island perimeter
+
+  Args:
+      grid (2Dlist): _description_
+
+  Returns:
+      int: island perimeter
+  """  
   lists = []
   perimeter = 0
   for i in range(len(grid)):
