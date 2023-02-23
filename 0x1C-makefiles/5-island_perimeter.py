@@ -48,28 +48,52 @@ def island_perimeter(grid):
   for k in lists:
     top = ordinates(k, "top")
     bottom = ordinates(k, "bottom")
+    
     left = ordinates(k, "left")
     right = ordinates(k, "right")
     
-    if top[0] != -1:
+    if k[0] != 0:
       if grid[top[0]][top[1]] == 0:
         perimeter += 1
+        # print(k)
+        # print(1)
+        # print()
     else:
       perimeter += 1
-    if bottom[0] != -1:
+      # print(k)
+      # print("t")
+      # print()
+    if k[0] < len(grid) - 1:
       if grid[bottom[0]][bottom[1]] == 0:
         perimeter += 1
+        # print(k)
+        # print("b1")
+        # print()
     else:
       perimeter += 1
-    if left[1] != -1:
+      # print(k)
+      # print("b")
+      # print()
+    if k[1] != 0:
       if grid[left[0]][left[1]] == 0:
         perimeter += 1
+        # print(k)
+        # print("l1")
+        # print()
     else:
       perimeter += 1
-    if right[1] != -1:
+      # print(k)
+      # print("l2")
+      # print()
+    if k[1] <= len(k):
       if grid[right[0]][right[1]] == 0:
         perimeter += 1
+        # print(k)
+        # print("r1")
+        # print()
     else:
       perimeter += 1
-      
+      # print(k)
+      # print("r2")
+      # print()     
   return perimeter
