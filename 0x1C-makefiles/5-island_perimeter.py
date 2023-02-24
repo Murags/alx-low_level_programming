@@ -1,7 +1,16 @@
 #!/usr/bin/python3
-
+"""_summary_
+"""
 
 def island_perimeter(grid):
+  """_summary_
+
+  Args:
+      grid (_type_): _description_
+
+  Returns:
+      _type_: _description_
+  """  
   perimeter = 0
   
   for i in range(len(grid)):
